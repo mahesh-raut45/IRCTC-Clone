@@ -1,0 +1,22 @@
+.train_card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    margin: 15px 0;
+    text-align: left;
+    transition: all 0.3s;
+}
+
+.train_card:hover {
+    transform: translateY(-5px);
+}
+
+.heading {
+    margin-top: 0;
+    color: #007bff;
+}
+
+.paragraph {
+    color: #495057;
+}
