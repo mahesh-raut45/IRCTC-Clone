@@ -1,15 +1,19 @@
 import { useState } from "react";
-import { Nav } from "./Nav";
+import { Nav } from "../Nav/Nav";
 import styles from "./HomePage.module.css";
+import { useForm } from "../../Hooks/useaForm";
 
 const HomePage = () => {
-  const [formData, setFormData] = useState({ from: "", to: "", date: "" });
+  // const [formData, setFormData] = useState({ from: "", to: "", date: "" });
 
-  const handleChange = (e) => {
-    // console.log(e);
-    const { id, value } = e.target;
-    setFormData({ ...formData, [id]: value });
-  };
+  const [formData, setFormData] = useForm({ from: "", to: "", date: "" });
+
+  // created a useForm custom hook
+  // const handleChange = (e) => {
+  //   // console.log(e);
+  //   const { id, value } = e.target;
+  //   setFormData({ ...formData, [id]: value });
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,7 +32,7 @@ const HomePage = () => {
             placeholder="Enter Departure Station"
             required
             value={formData.from}
-            onChange={handleChange}
+            onChange={setFormData}
           />
         </div>
         <div className={styles.form_group}>
@@ -39,7 +43,7 @@ const HomePage = () => {
             placeholder="Enter Arrival Station"
             required
             value={formData.to}
-            onChange={handleChange}
+            onChange={setFormData}
           />
         </div>
         <div className={styles.form_group}>
@@ -49,7 +53,7 @@ const HomePage = () => {
             id="date"
             required
             value={formData.date}
-            onChange={handleChange}
+            onChange={setFormData}
           />
         </div>
         <button className={styles.form_btn} type="submit">

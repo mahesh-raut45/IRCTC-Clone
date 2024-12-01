@@ -1,8 +1,11 @@
+import { useState } from "react";
 import "./App.css";
-import { HomePage } from "./Components/HomePage";
-import { Nav } from "./Components/Nav";
+import { HomePage } from "./Components/HomPage/HomePage";
+import { Nav } from "./Components/Nav/Nav";
 import { SearchComp } from "./Components/SearchComp";
-import { TraiCard } from "./Components/TrainCard";
+import { StopWatch } from "./Components/StopWatch";
+import { TraiCard } from "./Components/TrainCard/TrainCard";
+import { Search } from "./Components/Search/Search";
 
 const train = {
   name: "Rajdhani Exp",
@@ -14,11 +17,24 @@ const train = {
 };
 
 function App() {
+  const [show, setShow] = useState(true);
+
   return (
     <div className="App">
       <HomePage />
       <TraiCard train={train} />
-      {/* <SearchComp /> */}
+      {/* <Search /> */}
+
+      {/* <SearchComp />
+
+      {/* {show && <StopWatch />}
+      <button
+        onClick={() => {
+          setShow(!show);
+        }}
+      >
+        {show ? "hide" : "show"}
+      </button> */}
     </div>
   );
 }

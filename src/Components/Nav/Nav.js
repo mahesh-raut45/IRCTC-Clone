@@ -1,9 +1,10 @@
 import { Component } from "react";
-import "./Nav.css";
+import styles from "./Nav.module.css";
+
 class Nav extends Component {
   render() {
     return (
-      <nav className="navbar">
+      <nav className={styles.navbar}>
         <h1>IRCTC</h1>
         <ul>
           <li>
